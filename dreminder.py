@@ -35,6 +35,24 @@ def check():
     window.after(10000, check)
 
 
+def play_snd():
+    pygame.mixer.init()
+    pygame.mixer.music.load("reminder.mp3")
+    pygame.mixer.music.play()
+
+window = Tk()
+window.title("Напоминание")
+
+label = Label(text="Установите напоминание", font=("Arial", 14))
+label.pack(pady=10)
+
+set_button = Button(text="Установить напоминание", command=set)
+set_button.pack(pady=10)
+
+check()
+
+
+
 window = Tk()
 window.title("Напоминание")
 label = Label(text="Установите напоминание")
